@@ -1,0 +1,18 @@
+require 'factual'
+factual = Factual.new("HZCfWQni0dvmaAwifH2YKSXViPHeXKE0Kt4xHIOw", "LVIuLEfGFNZRShKxYlm92QapIY2yqlHnPb7Q98AI")
+
+# place details:
+new_values = { :name => "Juan Carlos Garcia",
+               :address => "15 East Washington St.",
+               :locality => "Glens Falls",
+               :region => "NY",
+               :postcode => "12801",
+               :latitude => 43.307394,
+               :longitude => -73.645999, 
+	       :tel => "518-793-0475",
+               :category_ids => [99], # Healthcare › Physicians › Plastic Surgeons
+	       :web => "http://www.drgarciaplasticsurgery.com/"
+}
+
+# do the submit:
+factual.submit("us-sandbox", "my_apps_user").values(new_values).write
